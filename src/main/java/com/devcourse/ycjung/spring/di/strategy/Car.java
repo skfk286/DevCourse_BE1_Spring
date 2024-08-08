@@ -8,6 +8,7 @@ public class Car {
     private String color;
 
     public Car() {}
+
     public Car(Tire tire) {
         this.tire = tire;
     }
