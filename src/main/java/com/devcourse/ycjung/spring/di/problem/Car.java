@@ -8,7 +8,7 @@ public class Car {
     private String model;
     private String color;
 
-    // 예를 들면 송금같ㅌ은 비즈니스 로직 처리 함수를 작성하는 일
+    // 예를 들면 송금같은 비즈니스 로직 처리 함수를 작성하는 일
     public void printInfo() {
         System.out.println("차량 모델 : " + model); // 잔액 체크(select)
         System.out.println("색상 :" + color); // 출금 처리(insert or update)
