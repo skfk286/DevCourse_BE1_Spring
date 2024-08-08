@@ -8,14 +8,11 @@
   <name>DevCourse_BE1_Spring Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
-  <dependencies>
+  <properties>
+      <ycjung-version>6.1.4</ycjung-version>
+  </properties>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+  <dependencies>
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -33,6 +30,19 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>6.1.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${ycjung-version}</version>
     </dependency>
 
   </dependencies>
