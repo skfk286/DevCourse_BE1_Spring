@@ -12,10 +12,10 @@ public class Car {
         this.tire = tire;
     }
 
-    public Car(Tire tire, String model, String color) {
-        this.tire = tire;
+    public Car(String model, String color, Tire tire) {
         this.model = model;
         this.color = color;
+        this.tire = tire;
     }
 
     public void setTire(Tire tire) {
