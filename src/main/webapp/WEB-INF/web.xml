@@ -7,13 +7,13 @@
 
 <!--  <servlet>-->
 <!--    <servlet-name>aaa</servlet-name>-->
-<!--    <servlet-class>com.devcourse.ycjung.day_0809.servlet.YcjungServlet</servlet-class>-->
+<!--    <servlet-class>com.devcourse.ycjung.day_0808.servlet.YcjungServlet</servlet-class>-->
 <!--    <load-on-startup>1</load-on-startup>-->
 <!--  </servlet>-->
 
 <!--  <servlet>-->
 <!--    <servlet-name>bbb</servlet-name>-->
-<!--    <servlet-class>com.devcourse.ycjung.day_0809.servlet.PageServlet</servlet-class>-->
+<!--    <servlet-class>com.devcourse.ycjung.day_0808.servlet.PageServlet</servlet-class>-->
 <!--    <load-on-startup>2</load-on-startup>-->
 <!--  </servlet>-->
 

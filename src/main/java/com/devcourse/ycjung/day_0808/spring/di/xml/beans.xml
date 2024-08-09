@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 객체 관리 스프링 창고 -->
+    <bean id="sonata1" class="com.devcourse.ycjung.day_0808.spring.di.xml.Car">
+        <constructor-arg ref = "koreaTire"/>
+    </bean>
+
+    <bean id="sonata2" class="com.devcourse.ycjung.day_0808.spring.di.xml.Car">
+        <constructor-arg ref = "chinaTire"/>
+    </bean>
+
+    <bean id="chinaTire" class="com.devcourse.ycjung.day_0808.spring.di.xml.ChinaTire" />
+    <bean id="koreaTire" class="com.devcourse.ycjung.day_0808.spring.di.xml.KoreaTire" />
+</beans>
