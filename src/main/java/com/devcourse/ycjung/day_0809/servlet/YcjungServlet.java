@@ -1,4 +1,4 @@
-//package com.devcourse.ycjung.servlet;
+//package com.devcourse.ycjung.day_0809.servlet;
 //
 //import javax.servlet.ServletException;
 //import javax.servlet.annotation.WebServlet;
