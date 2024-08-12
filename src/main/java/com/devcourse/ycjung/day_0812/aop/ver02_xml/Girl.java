@@ -1,4 +1,4 @@
-package com.devcourse.ycjung.day_0812.aop.xml;
+package com.devcourse.ycjung.day_0812.aop.ver02_xml;
 
 import java.util.Random;
 

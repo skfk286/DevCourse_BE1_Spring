@@ -6,10 +6,10 @@
            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="jieun" class="com.devcourse.ycjung.day_0812.aop.xml.Girl"/>
-    <bean id="daewon" class="com.devcourse.ycjung.day_0812.aop.xml.Boy"/>
+    <bean id="jieun" class="com.devcourse.ycjung.day_0812.aop.ver02_xml.Girl"/>
+    <bean id="daewon" class="com.devcourse.ycjung.day_0812.aop.ver02_xml.Boy"/>
 
-    <bean id="common" class="com.devcourse.ycjung.day_0812.aop.xml.CommonAspect"/>
+    <bean id="common" class="com.devcourse.ycjung.day_0812.aop.ver02_xml.CommonAspect"/>
 
     <aop:config>
         <aop:aspect ref="common">

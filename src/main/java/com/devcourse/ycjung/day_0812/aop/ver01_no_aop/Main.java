@@ -1,4 +1,4 @@
-package com.devcourse.ycjung.day_0812.aop.example;
+package com.devcourse.ycjung.day_0812.aop.ver01_no_aop;
 
 /**
  * AOP 고찰
