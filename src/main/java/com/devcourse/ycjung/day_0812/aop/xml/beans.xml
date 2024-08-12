@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="jieun" class="com.devcourse.ycjung.day_0812.aop.xml.Girl"/>
+    <bean id="daewon" class="com.devcourse.ycjung.day_0812.aop.xml.Boy"/>
+
+    <bean id="common" class="com.devcourse.ycjung.day_0812.aop.xml.CommonAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="common">
+            <!-- expression: 메소드 이름에 뭐가 들어가는 애들은 다 선택하라. -->
+            <aop:pointcut id="ppp" expression="execution(public * make*(..))"/>
+            <aop:before method="bbbefore" pointcut-ref="ppp"/>
+            <aop:after-returning method="aaafterReturning" pointcut-ref="ppp"/>
+            <aop:after-throwing method="aaafterThrowing" pointcut-ref="ppp"/>
+            <aop:after method="aaafter" pointcut-ref="ppp"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

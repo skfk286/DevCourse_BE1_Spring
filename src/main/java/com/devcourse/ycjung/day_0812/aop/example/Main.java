@@ -1,6 +1,4 @@
-package com.devcourse.ycjung.day_0812.aop;
-
-import java.util.Random;
+package com.devcourse.ycjung.day_0812.aop.example;
 
 /**
  * AOP 고찰
@@ -11,6 +9,6 @@ public class Main {
         daewon.makeTaco();
 
         Girl jieun = new Girl();
-        jieun.makeSamgeop();
+        jieun.makeSamgyepsal();
     }
 }

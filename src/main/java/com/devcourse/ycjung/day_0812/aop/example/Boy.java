@@ -1,9 +1,9 @@
-package com.devcourse.ycjung.day_0812.aop;
+package com.devcourse.ycjung.day_0812.aop.example;
 
 import java.util.Random;
 
-public class Girl {
-    public void makeSamgeop() {
+public class Boy {
+    public void makeTaco() {
         System.out.println("배가 고프다"); // 핵심 관심사항 수행 전에 해야될 일
 
         try {
