@@ -1,6 +1,9 @@
 package com.devcourse.ycjung.day_0808.spring.di.componentscan;
 
-// @Component
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component("ch")
 public class ChinaTire implements Tire {
 
     @Override

@@ -5,7 +5,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Driver {
 
-    public static final String FILE_SYSTEM_XML_PATH = "/src/main/java/com/devcourse/ycjung/spring/di/componentscan/beans.xml";
+    public static final String FILE_SYSTEM_XML_PATH = "src/main/java/com/devcourse/ycjung/day_0808/spring/di/componentscan/beans.xml";
 
     public static void main(String[] args) {
 

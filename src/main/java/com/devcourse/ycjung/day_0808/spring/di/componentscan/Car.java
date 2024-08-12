@@ -1,12 +1,15 @@
 package com.devcourse.ycjung.day_0808.spring.di.componentscan;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Car {
     // Strate 패턴의 핵심 : 의존하는 객체를 구체적으로 지정하지 않는다! 의존하는 객체의 결합도를 느슨하게 만든다.
 
+    @Autowired
+    @Qualifier("kr")
     private Tire tire;
     private String model;
     private String color;
@@ -22,7 +25,6 @@ public class Car {
         this.tire = tire;
     }
 
-    @Autowired
     public void setTire(Tire tire) {
         this.tire = tire;
     }
