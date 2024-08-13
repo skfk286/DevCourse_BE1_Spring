@@ -1,5 +1,7 @@
 package com.devcourse.ycjung.day_0812.aop.ver05_aop_proxy;
 
+import org.springframework.web.servlet.HttpServletBean;
+
 /**
  * 스프링 AOP 를 실제 구현해본다면..
  */
@@ -22,5 +24,7 @@ public class SpringAction {
         daewonProxy.setTarget(new Girl()); // 삽겹살로..
 
         daewonProxy.makeFood();
+
+        HttpServletBean hsb;
     }
 }
