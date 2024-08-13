@@ -4,8 +4,6 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-  <display-name>Archetype Created Web Application</display-name>
-
 <!--  <servlet>-->
 <!--    <servlet-name>aaa</servlet-name>-->
 <!--    <servlet-class>com.devcourse.ycjung.day_0808.servlet.YcjungServlet</servlet-class>-->
