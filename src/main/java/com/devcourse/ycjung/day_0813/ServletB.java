@@ -14,6 +14,10 @@ public class ServletB extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html; charset=UTF-8");
+
         System.out.println("---- ServletB 의 doGet 호출됨! 아마도 forward.. ----");
         System.out.println("client ip 주소 : " + req.getRemoteAddr());
         System.out.println("요청 url : " + req.getServletPath());

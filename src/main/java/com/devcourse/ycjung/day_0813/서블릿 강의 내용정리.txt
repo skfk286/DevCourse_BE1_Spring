@@ -8,7 +8,10 @@
 * 하나의 요청에 두명이 세트로 일처리 해준다 -> forward, redirect
 * 오후에 [서블릿 + jsp] 세트 실습, 지금은 [서블릿 + 서블릿] 세트로 forward, redirect 특징을 구현.
 [ServletA 와 ServletB : forward 실습] ---- request 가 한 개, request 가 그대로 전달된다는 점!
+- Servlet 자바에서 처리 완료한 데이터를 html 에 표현해야 할 때 직접하기 힘드니깐 view 담당하는 쪽으로 전달하는 용도
 [ServletC 와 ServletD : redirect 실습] ---- request 가 두 개, 즉 첫번째 request 가 사라진다는 점!
+- 클라이언트가 어떤 url 방문했을 때 여기말고 다른데로 유도하는 용도
+- 글쓰기, 회원가입 등의 dml 요청일 때, 새로고침 해서 방금 전 보낸 request 재전송 되는 문제 해결하려고 새로운 request 생성시키는 용도.
 
 요청 -> 응답(특별한 경우)
 * html 을 안 보내는 경우
@@ -25,3 +28,7 @@
 - MVC 구조에서는 요청의 응답이 대부분 html 문서(화면)임. 이럴 때는 response 건드릴 일은 없을 거다.
 - 특별한 응답을 해줘야 하는 경우들이 생기는데 그 때는 response를 건드린다.
   (1) redirect (2) cookie 발급 (3) 파일 다운로드 기능 (4) data 응답(REST 서버로 가려고 함)
+
+
+forward : 데이터를 전달해서 화면에 뿌릴 때 JSP 페이지 만들때 (데이터를 갖고 이동)
+redirect : 사용자가 방문한 것을 보고 다른 URL 로 이동 시킬때
