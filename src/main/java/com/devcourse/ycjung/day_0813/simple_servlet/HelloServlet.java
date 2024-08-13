@@ -1,4 +1,4 @@
-package com.devcourse.ycjung.day_0813;
+package com.devcourse.ycjung.day_0813.simple_servlet;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
