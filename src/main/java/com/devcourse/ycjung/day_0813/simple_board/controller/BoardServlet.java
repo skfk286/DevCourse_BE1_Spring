@@ -45,25 +45,40 @@ public class BoardServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String title = req.getParameter("tttt");
-        String content = req.getParameter("cccc");
-        String writer = req.getParameter("wwww");
-
-        BoardDTO boardDTO = new BoardDTO(title, content, writer);
+        String action = req.getParameter("action");
 
         try {
-            int result = repo.insert(boardDTO);
+            if ("write".equals(action)) {
+                String title = req.getParameter("tttt");
+                String content = req.getParameter("cccc");
+                String writer = req.getParameter("wwww");
+
+                BoardDTO boardDTO = new BoardDTO(title, content, writer);
+
+                int result = repo.insert(boardDTO);
 //            if( result == 1) {
 //                req.getRequestDispatcher("/WEB-INF/views/board/success.jsp").forward(req, resp); // 성공
 //            } else {
 //                req.getRequestDispatcher("/WEB-INF/views/board/fail.jsp").forward(req, resp); // 실패
 //            }
-            if(result == 1) {
-                // 이러면 새로운 req 가 생성됨으로 기존 req를 재사용 하는 상황을 막을 수 있다.
-                // 다만 alert.do 처리가 필요
-                resp.sendRedirect(req.getContextPath() + "/alert.do");
+                if(result == 1) {
+                    // 이러면 새로운 req 가 생성됨으로 기존 req를 재사용 하는 상황을 막을 수 있다.
+                    // 다만 alert.do 처리가 필요
+                    resp.sendRedirect(req.getContextPath() + "/alert.do");
+                }
+            } else if("modify".equals(action)) {
+                BoardDTO boardDto = new BoardDTO();
+                boardDto.setNo(Integer.parseInt(req.getParameter("no")));
+                boardDto.setTitle(req.getParameter("title"));
+                boardDto.setContent(req.getParameter("content"));
+
+                int result = repo.update(boardDto);
+                if(result >= 1) {
+                    resp.sendRedirect(req.getContextPath() + "/alert.do");
+                }
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

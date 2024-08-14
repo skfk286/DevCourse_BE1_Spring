@@ -14,32 +14,40 @@
     <%
         BoardDTO bbb = (BoardDTO)request.getAttribute("bbb");
     %>
-    <table border="1">
-        <tr>
-            <td>글 번호 : </td>
-            <td><%=bbb.getNo()%></td>
-        </tr>
-        <tr>
-            <td>글 제목 : </td>
-            <td><%=bbb.getTitle()%></td>
-        </tr>
-        <tr>
-            <td>글 작성자 : </td>
-            <td><%=bbb.getWriter()%></td>
-        </tr>
-        <tr>
-            <td>글 작성일시 : </td>
-            <td><%=bbb.getRegDate()%></td>
-        </tr>
-        <tr>
-            <td>글 조회수 : </td>
-            <td><%=bbb.getReadCount()%></td>
-        </tr>
-        <tr>
-            <td>글 내용 : </td>
-            <td><%=bbb.getContent()%></td>
-        </tr>
-    </table>
-    <a href="<%=request.getContextPath()%>/board.do?action=list">[목록으로]</a>
+    <form action="<%=request.getContextPath()%>/board.do?action=modify" method="post">
+
+        <table border="1">
+            <tr>
+                <td>글 번호 : </td>
+                <%--<td><%=bbb.getNo()%></td>--%>
+                <td><input type="text" value="<%=bbb.getNo()%>" name="no" readonly></td>
+            </tr>
+            <tr>
+                <td>글 제목 : </td>
+                <%--<td><%=bbb.getTitle()%></td>--%>
+                <td><input type="text" value="<%=bbb.getTitle()%>" name="title"></td>
+            </tr>
+            <tr>
+                <td>글 작성자 : </td>
+                <td><%=bbb.getWriter()%></td>
+            </tr>
+            <tr>
+                <td>글 작성일시 : </td>
+                <td><%=bbb.getRegDate()%></td>
+            </tr>
+            <tr>
+                <td>글 조회수 : </td>
+                <td><%=bbb.getReadCount()%></td>
+            </tr>
+            <tr>
+                <td>글 내용 : </td>
+                <%--<td><%=bbb.getContent()%></td>--%>
+                <td><input type="text" value="<%=bbb.getContent()%>" name="content"></td>
+            </tr>
+        </table>
+        <input type="submit" value="수정하기">
+        <%--<a href="#">[수정하기]</a>--%>
+    </form>
+        <a href="<%=request.getContextPath()%>/board.do?action=list">[목록으로]</a>
 </body>
 </html>

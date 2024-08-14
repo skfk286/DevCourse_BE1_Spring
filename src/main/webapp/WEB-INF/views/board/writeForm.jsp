@@ -11,7 +11,7 @@
     <title>글 작성</title>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/board.do" method="post">
+<form action="<%=request.getContextPath()%>/board.do?action=write" method="post">
     제목: <input type="text" placeholder="제목을 입력하세요." id="title" name="tttt"/><br>
     작성자: <input type="text" name="wwww" placeholder="작성자를 적으세요."><br>
     내용: <textarea placeholder="내용을 입력하세요" name="cccc"></textarea><br>
