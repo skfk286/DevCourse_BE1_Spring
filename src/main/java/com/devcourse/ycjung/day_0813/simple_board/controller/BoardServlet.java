@@ -26,14 +26,14 @@ public class BoardServlet extends HttpServlet {
             if ("list".equals(action)) {
                 List<BoardDTO> boardList = repo.selectAll(); // 조회
                 req.setAttribute("bList", boardList); // 담고 전달
-                req.getRequestDispatcher("/WEB-INF/views/list.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/views/board/list.jsp").forward(req, resp);
             } else if ("writeForm".equals(action)) {
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
             // 에러 발생하면 에러 페이지로.
-            req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/views/board/common/error.jsp").forward(req, resp);
         }
     }
 }

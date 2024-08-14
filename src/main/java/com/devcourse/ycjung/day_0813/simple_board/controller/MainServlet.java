@@ -18,6 +18,6 @@ public class MainServlet extends HttpServlet {
             webapp 폴더에 있는 jsp는 요청을 받을 수 있어짐
             나는 MVC 구조를 준수할 예정임으로 jsp가 요청을 먼저 받아서 처리하는 경우는 아에 막아버린다.
          */
-        req.getRequestDispatcher("/WEB-INF/views/main.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/board/main.jsp").forward(req, resp);
     }
 }
