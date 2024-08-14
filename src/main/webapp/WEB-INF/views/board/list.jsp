@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>게시글 목록</title>
 </head>
 <body>
 <table border="1">
@@ -19,7 +19,7 @@
 %>
     <tr>
         <td><%=b.getNo()%></td>
-        <td><%=b.getTitle()%></td>
+        <td><a href="<%=request.getContextPath()%>/board.do?action=view&no=<%=b.getNo()%>"><%=b.getTitle()%><a/></td>
         <td><%=b.getWriter()%></td>
         <td><%=b.getRegDate()%></td>
         <td><%=b.getReadCount()%></td>
@@ -29,5 +29,6 @@
     }
 %>
 </table>
+<a href="<%=request.getContextPath()%>/board.do?action=writeForm">[게시글 작성하러 가기]</a>
 </body>
 </html>
