@@ -3,6 +3,7 @@ package com.devcourse.ycjung.day_0813.simple_board.controller;
 import com.devcourse.ycjung.day_0813.simple_board.model.BoardDTO;
 import com.devcourse.ycjung.day_0813.simple_board.model.BoardRepository;
 import com.devcourse.ycjung.day_0813.simple_board.model.BoardRepositoryMysql;
+import com.devcourse.ycjung.day_0813.simple_board.model.BoardService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,7 +16,9 @@ import java.util.List;
 
 @WebServlet("/board.do")
 public class BoardServlet extends HttpServlet {
-    private BoardRepository repo = BoardRepositoryMysql.getInstance();
+    // DB 작업하는 repo 를 직접 호출하지 않고, 비즈니스 로직 처리까지 진행하는 service 로 대체..
+    // private BoardRepository repo = BoardRepositoryMysql.getInstance();
+    private BoardService service = BoardService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,14 +27,16 @@ public class BoardServlet extends HttpServlet {
         // 클라이언트가 어떤 링크를 클릭했는지에 따라 다른 행동을 해줘야 한다.
         try {
             if ("list".equals(action)) {
-                List<BoardDTO> boardList = repo.selectAll(); // 조회
+                // List<BoardDTO> boardList = repo.selectAll(); // 조회
+                List<BoardDTO> boardList = service.getBoard(); // repo -> service
                 req.setAttribute("bList", boardList); // 담고 전달
                 req.getRequestDispatcher("/WEB-INF/views/board/list.jsp").forward(req, resp);
             } else if ("writeForm".equals(action)) {
                 req.getRequestDispatcher("/WEB-INF/views/board/writeForm.jsp").forward(req, resp);
             } else if ("view".equals(action)) {
                 int id = Integer.parseInt(req.getParameter("no"));
-                BoardDTO boardDto = repo.selectOne(id);
+                // BoardDTO boardDto = repo.selectOne(id);
+                BoardDTO boardDto = service.read(id); // repo -> service
 
                 req.setAttribute("bbb", boardDto);
                 req.getRequestDispatcher("/WEB-INF/views/board/view.jsp").forward(req, resp);
@@ -55,7 +60,8 @@ public class BoardServlet extends HttpServlet {
 
                 BoardDTO boardDTO = new BoardDTO(title, content, writer);
 
-                int result = repo.insert(boardDTO);
+                // int result = repo.insert(boardDTO);
+                int result = service.write(boardDTO); // repo -> service
 //            if( result == 1) {
 //                req.getRequestDispatcher("/WEB-INF/views/board/success.jsp").forward(req, resp); // 성공
 //            } else {
@@ -72,7 +78,9 @@ public class BoardServlet extends HttpServlet {
                 boardDto.setTitle(req.getParameter("title"));
                 boardDto.setContent(req.getParameter("content"));
 
-                int result = repo.update(boardDto);
+                // int result = repo.update(boardDto);
+                int result = service.update(boardDto);
+
                 if(result >= 1) {
                     resp.sendRedirect(req.getContextPath() + "/alert.do");
                 }
